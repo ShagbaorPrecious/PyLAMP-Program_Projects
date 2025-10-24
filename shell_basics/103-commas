@@ -1,0 +1,19 @@
+#!/bin/bash
+List . and .. first
+echo -n ".,"   # dot directory
+echo -n "..,"  # dotdot directory
+
+# List other files and directories including hidden ones, sorted with digits first, letters after
+ls -a | grep -v -e '^.' -e '^..' | LC_ALL=C sort -f | awk '
+{
+  # Add slash to directories
+  cmd = "test -d \""0"    echo yes || echo no"
+  cmd | getline isdir
+  close(cmd)
+  if (isdir == "yes") 
+    print0"/"
+  } else {
+    print $0
+  }
+}' | paste -sd ',' -
+echo
