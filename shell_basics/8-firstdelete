@@ -1,0 +1,8 @@
+#!/bin/bash
+if [ -f /tmp/my_first_directory/betty ]; then
+    rm /tmp/my_first_directory/betty
+    echo "File 'betty' deleted from /tmp/my_first_directory/"
+else
+    echo "File 'betty' does not exist in /tmp/my_first_directory/"
+fi
+
