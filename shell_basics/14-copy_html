@@ -1,0 +1,13 @@
+#!/bin/bash
+for file in *.html; do
+  # Check if the file actually exists in current directory (in case no match)
+  [ -e "file" ] || continue
+
+  # If file doesn't exist in parent, or current file is newer, copy it
+  if [ ! -e "../file" ] || [ "file" -nt "../file" ]; then
+    cp "file" ../
+    echo "Copiedfile to parent directory"
+  else
+    echo "Skipped $file; parent version is up to date"
+fi
+done
