@@ -1,0 +1,8 @@
+#!/bin/bash
+#!/bin/bash
+echo "Script is running"
+ln -sf /bin/ls ./_ls_
+echo "Symbolic link _ls_ created"
+ls -la
+
+
