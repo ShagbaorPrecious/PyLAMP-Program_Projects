@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ "$(stat -c '%U' hello)" = "xa" ]; then
+sudo chown betty hello
+fi
